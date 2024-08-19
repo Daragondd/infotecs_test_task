@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/infotecs_test_task/static/css/main.815ce39c.css",
+    "main.js": "/infotecs_test_task/static/js/main.f6bd8e95.js",
+    "index.html": "/infotecs_test_task/index.html",
+    "main.815ce39c.css.map": "/infotecs_test_task/static/css/main.815ce39c.css.map",
+    "main.f6bd8e95.js.map": "/infotecs_test_task/static/js/main.f6bd8e95.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.815ce39c.css",
+    "static/js/main.f6bd8e95.js"
+  ]
+}
