@@ -1,0 +1,53 @@
+table {  
+    border: 1rem hsl(0, 0%, 0%);
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 10px;
+    
+    
+  }
+  
+thead {
+    background-color: #ffffff;
+    
+}
+  
+th,
+td {
+    border: 1px solid rgb(0, 0, 0);
+    min-width: 50px;
+    padding: 12px;
+    line-height: 1.7;
+    
+    
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+th {
+    resize: horizontal;
+    font-weight: bold;
+    
+}
+
+label {
+    font-weight: normal;
+}
+
+select {
+    margin-top: 7px;
+    padding: 5px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+  }
+
+  button {
+    border-radius: 10px;
+    font-size: 18px;
+    padding: 10px;
+    margin-top: 10px;
+  }
