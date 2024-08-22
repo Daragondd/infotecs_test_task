@@ -19,6 +19,7 @@ const openModal = event => {
   setSelectedItem(id-1);
 }
 
+//Сортировка
 const sortByName = () => {
   const usersCopy = [...users];
   usersCopy.sort((userA, userB) => {
