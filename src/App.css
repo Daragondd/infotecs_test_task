@@ -14,3 +14,7 @@ input[type="text"] {
     padding: 10px;
 
 }
+
+text::selection {
+  background: red;
+}

@@ -1,6 +1,8 @@
 import {Modal} from './Modal';
-import React, { useState, useEffect } from 'react';
-import './Table.css'
+import React, { useState } from 'react';
+import './Table.css';
+import { FaArrowUp, FaArrowDown } from "react-icons/fa";
+
 
 const Table = ({users}) => {
 
@@ -8,6 +10,7 @@ const [moreInfo, setMoreInfo] = useState(false);
 const [selectedItem, setSelectedItem] = useState(null);
 const [sorted, setSorted] = useState({ sorted: "id", reversed: false});
 const [items, setItems] = useState(users);
+
 
 //Открытие модального окна
 const openModal = event => {
@@ -27,7 +30,7 @@ const sortByName = () => {
 			return fullNameA.localeCompare(fullNameB);
   });
   setItems(usersCopy);
-  setSorted({ sorted: "firstName", reversed: !sorted.reversed });
+  setSorted({ sorted: "name", reversed: !sorted.reversed });
 }
 
 const sortByAge = () => {
@@ -70,23 +73,44 @@ const sortByAddress = () => {
 
 const cancelSorting = () => {
   setItems(users);
+  setSorted({ sorted: "id", reversed: !sorted.reversed });
 }
 
+const searchingUser = () => {
+  setItems(users);
+  setSorted({ sorted: "id", reversed: !sorted.reversed });
+}
+
+const renderArrow = () => {
+  if (sorted.reversed) {
+    return <FaArrowUp />;
+  }
+  return <FaArrowDown />;
+};
 
 return (
   <div className="App">
+    <button onClick = {searchingUser}>Search</button>
     <button onClick = {cancelSorting}>Cancel sorting</button>
     <table>
       <thead>
         <tr>
-          <th onClick={sortByName}>Name</th>
-          <th onClick={sortByAge}>Age</th>
-          <th onClick={sortByGender}>Gender</th>
+          <th onClick={sortByName}>Name
+          {sorted.sorted === "name" ? renderArrow() : null}
+          </th>
+          <th onClick={sortByAge}>Age
+          {sorted.sorted === "age" ? renderArrow() : null}
+          </th>
+          <th onClick={sortByGender}>Gender
+          {sorted.sorted === "gender" ? renderArrow() : null}
+          </th>
           <th>Phone</th>
-          <th onClick={sortByAddress}>Address</th>
+          <th onClick={sortByAddress}>Address
+          {sorted.sorted === "address" ? renderArrow() : null}
+          </th>
         </tr>
         {      
-            users.map((user) => {
+            items.map((user) => {
                 return (
                     <tr key = {user.id} data-rowid={user.id} onClick={openModal}>
                         <td>{`${user.firstName} ${user.maidenName} ${user.lastName}`}</td>
